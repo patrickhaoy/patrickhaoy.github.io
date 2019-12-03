@@ -38,7 +38,7 @@
 	============================================================================================ */
 	.home_banner_area {
 		min-height: 728px;
-		margin-bottom: 120px;
+		margin-bottom: 0px;
 	}
 	.home_banner_area .banner_inner {
 		min-height: 650px;
@@ -374,7 +374,7 @@
 		border-radius: 0px;
 	}
 	.home_banner_area {
-		margin-bottom: 71px;
+		margin-bottom: 0px;
 	}
 	.tabs_inner .nav.nav-tabs li a {
 		line-height: 42px;
