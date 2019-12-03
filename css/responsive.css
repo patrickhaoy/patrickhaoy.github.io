@@ -230,7 +230,7 @@
 @media (max-width:767px){
 	.home_banner_area {
 		min-height: 570px;
-		margin-bottom: 120px;
+		margin-bottom: 0px;
 	}
 	.home_banner_area .banner_inner {
 		min-height: 500px;
