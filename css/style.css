@@ -68,7 +68,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Heebo", sans-serif;
-  font-weight: bold; }
+  font-weight: normal; }
 
 button:focus {
   outline: none;
@@ -400,7 +400,7 @@ button:focus {
       font-size: 48px;
       font-family: "Heebo", sans-serif;
       margin-bottom: 0px;
-      font-weight: bold; }
+      font-weight: normal; }
     .banner_area .banner_inner .banner_content .page_link a {
       font-size: 14px;
       color: #222222;
@@ -2898,7 +2898,10 @@ h6 {
 /* Footer Area css
 ============================================================================================ */
 .footer_area {
-  background: #000; }
+  background: #7672f8; 
+  bottom:0;
+  width:100%;
+}
 
 .f_title {
   margin-bottom: 35px; }
