@@ -54,56 +54,14 @@
           </tr>
         </tbody></table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Preprints</heading>
             </td>
           </tr>
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-        <tr onmouseout="contrast_stop()" onmouseover="contrast_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='contrast_image'><video  width=100% height=100% muted autoplay loop>
-              <source src="images/contrast.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-              <img src='images/contrast.png' width="160">
-            </div>
-            <script type="text/javascript">
-              function contrast_start() {
-                document.getElementById('contrast_image').style.opacity = "1";
-              }
-    
-              function contrast_stop() {
-                document.getElementById('contrast_image').style.opacity = "0";
-              }
-              contrast_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://arxiv.org/abs/2306.03346">
-              <papertitle>Stabilizing Contrastive RL: Techniques for Offline Goal Reaching </papertitle>
-            </a>
-            <br>
-            <a href="https://scholar.google.com/citations?user=bezWXYcAAAAJ&hl=en">Chongyi Zheng</a>,
-            <a href="https://ben-eysenbach.github.io/">Benjamin Eysenbach</a>,
-            <a href="https://homerwalke.com/">Homer Rich Walke</a>, 
-            <strong>Patrick Yin</strong>,
-            <a href="https://kuanfang.github.io/">Kuan Fang</a>, 
-            <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
-            <br>
-            <a href="https://chongyi-zheng.github.io/stable_contrastive_rl/">project page</a>
-      /
-            <a href="https://arxiv.org/abs/2306.03346">arXiv</a>
-            <p></p>
-            <p>We discover that a shallow and wide architecture can boost the performance of contrastive RL approaches on simulated benchmarks. 
-              Additionally, we demonstrate that contrastive approaches can solve real-world robotic manipulation tasks.</p>
-          </td>
-        </tr>
-    
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
 
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
@@ -113,6 +71,88 @@
       </tr>
     </tbody></table>
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+    <tr onmouseout="asid_stop()" onmouseover="asid_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='asid_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/asid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/asid.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function asid_start() {
+            document.getElementById('asid_image').style.opacity = "1";
+          }
+
+          function asid_stop() {
+            document.getElementById('asid_image').style.opacity = "0";
+          }
+          asid_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://openreview.net/forum?id=jNR6s6OSBT">
+          <papertitle>ASID: Active Exploration for System Identification and Reconstruction in Robotic Manipulation </papertitle>
+        </a>
+        <br>
+        <a href="https://memmelma.github.io/">Marius Memmel</a>,
+        <a href="https://homes.cs.washington.edu/~zchuning/">Chuning Zhu</a>,
+        <a href="https://homes.cs.washington.edu/~ajwagen/index.html">Andrew Wagenmaker</a>, 
+        <strong>Patrick Yin</strong>,
+        <a href="https://homes.cs.washington.edu/~abhgupta/">Abhishek Gupta</a>
+        <br>
+        <em>ICLR 2024 <span style="color:red"><b>(Oral Presentation)</b></span></em>  
+        <br>
+        <a href="https://openreview.net/forum?id=jNR6s6OSBT">OpenReview</a>
+        <p></p>
+        <p>We propose a learning system that can leverage a small amount of real-world data to autonomously refine a simulation model, enabling sim-to-real transfer for real-world robotic manipulation tasks.</p>
+      </td>
+    </tr>
+
+    <tr onmouseout="contrast_stop()" onmouseover="contrast_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='contrast_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/contrast.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/contrast.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function contrast_start() {
+            document.getElementById('contrast_image').style.opacity = "1";
+          }
+
+          function contrast_stop() {
+            document.getElementById('contrast_image').style.opacity = "0";
+          }
+          contrast_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2306.03346">
+          <papertitle>Stabilizing Contrastive RL: Techniques for Robotic Goal Reaching from Offline Data </papertitle>
+        </a>
+        <br>
+        <a href="https://scholar.google.com/citations?user=bezWXYcAAAAJ&hl=en">Chongyi Zheng</a>,
+        <a href="https://ben-eysenbach.github.io/">Benjamin Eysenbach</a>,
+        <a href="https://homerwalke.com/">Homer Rich Walke</a>, 
+        <strong>Patrick Yin</strong>,
+        <a href="https://kuanfang.github.io/">Kuan Fang</a>, 
+        <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
+        <br>
+        <em>ICLR 2024 <span style="color:red"><b>(Spotlight Talk)</b></span></em>  
+        <br>
+        <a href="https://chongyi-zheng.github.io/stable_contrastive_rl/">project page</a>
+  /
+        <a href="https://arxiv.org/abs/2306.03346">arXiv</a>
+        <p></p>
+        <p>We discover that a shallow and wide architecture can boost the performance of contrastive RL approaches on simulated benchmarks. 
+          Additionally, we demonstrate that contrastive approaches can solve real-world robotic manipulation tasks.</p>
+      </td>
+    </tr>
 
     <tr onmouseout="flap_stop()" onmouseover="flap_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
@@ -146,7 +186,7 @@
         <a href="https://www.linkedin.com/in/gengchen-matt-yan/">Gengchan Yan</a>, 
         <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
         <br>
-        <em>CoRL 2022 <b>(Oral)</b></em>  
+        <em>CoRL 2022 <span style="color:red"><b>(Oral Presentation)</b></span></em>  
         <br>
         <a href="https://sites.google.com/view/project-flap">project page</a>
   /
