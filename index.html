@@ -448,6 +448,222 @@
       </td>
     </tr>
   </table>
+
+<script>
+// Comprehensive Analytics Tracking
+(function() {
+  'use strict';
+  
+  // Helper function to send events
+  function trackEvent(category, action, label, value) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': label,
+        'value': value,
+        'transport_type': 'beacon'
+      });
+    }
+  }
+  
+  // Track navigation link clicks
+  function trackNavigationLinks() {
+    const navLinks = {
+      'data/Patrick_Yin_Resume.pdf': 'CV',
+      'https://scholar.google.com/citations?hl=en&user=AMVmM84AAAAJ': 'Scholar',
+      'https://twitter.com/patrickhyin': 'Twitter',
+      'https://github.com/patrickhaoy/': 'Github',
+      'data/Patrick_Yin_Failure_Resume.pdf': 'CV of Failures',
+      'https://www.linkedin.com/in/patrickhaoy/': 'LinkedIn',
+      'mailto:patyin@cs.washington.edu': 'Email'
+    };
+    
+    Object.keys(navLinks).forEach(href => {
+      const links = document.querySelectorAll(`a[href="${href}"]`);
+      links.forEach(link => {
+        link.addEventListener('click', function() {
+          trackEvent('Navigation', 'click', navLinks[href]);
+        });
+      });
+    });
+  }
+  
+  // Track all external links
+  function trackExternalLinks() {
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      
+      // Skip already tracked navigation links
+      if (href.includes('mailto:') || href.includes('data/')) return;
+      
+      // Track external links
+      if (href.startsWith('http') && !href.includes(window.location.hostname)) {
+        link.addEventListener('click', function() {
+          const linkText = link.textContent.trim().substring(0, 50);
+          trackEvent('External Link', 'click', linkText || href);
+        });
+      }
+      
+      // Track internal links
+      if (href.startsWith('/') || href.includes('.html')) {
+        link.addEventListener('click', function() {
+          const linkText = link.textContent.trim().substring(0, 50);
+          trackEvent('Internal Link', 'click', linkText || href);
+        });
+      }
+    });
+  }
+  
+  // Track PDF downloads
+  function trackDownloads() {
+    const links = document.querySelectorAll('a[href$=".pdf"]');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        const filename = link.getAttribute('href').split('/').pop();
+        trackEvent('Download', 'click', filename);
+      });
+    });
+  }
+  
+  // Track scroll depth
+  function trackScrollDepth() {
+    let scrollTracked = {
+      25: false,
+      50: false,
+      75: false,
+      100: false
+    };
+    
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+      
+      Object.keys(scrollTracked).forEach(threshold => {
+        if (scrollPercent >= parseInt(threshold) && !scrollTracked[threshold]) {
+          scrollTracked[threshold] = true;
+          trackEvent('Engagement', 'scroll', threshold + '%');
+        }
+      });
+    });
+  }
+  
+  // Track time on page
+  function trackTimeOnPage() {
+    const startTime = Date.now();
+    const intervals = [30, 60, 120, 300]; // 30s, 1min, 2min, 5min
+    const tracked = {};
+    
+    intervals.forEach(interval => {
+      setTimeout(() => {
+        if (!tracked[interval]) {
+          tracked[interval] = true;
+          trackEvent('Engagement', 'time_on_page', interval + ' seconds');
+        }
+      }, interval * 1000);
+    });
+    
+    // Track on page unload
+    window.addEventListener('beforeunload', function() {
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
+      trackEvent('Engagement', 'page_exit', 'Time: ' + timeSpent + 's');
+    });
+  }
+  
+  // Track publication interactions
+  function trackPublications() {
+    const publications = document.querySelectorAll('papertitle');
+    publications.forEach(pub => {
+      const link = pub.closest('a');
+      if (link) {
+        link.addEventListener('click', function() {
+          const title = pub.textContent.trim().substring(0, 100);
+          trackEvent('Publication', 'click', title);
+        });
+      }
+    });
+    
+    // Track publication link types (project page, arXiv, etc.)
+    const pubLinks = document.querySelectorAll('td a[href*="github.io"], td a[href*="arxiv.org"], td a[href*="sites.google.com"]');
+    pubLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const linkType = link.href.includes('arxiv') ? 'arXiv' : 
+                         link.href.includes('github.io') ? 'Project Page' : 
+                         link.href.includes('sites.google.com') ? 'Project Page' : 'Other';
+        const linkText = link.textContent.trim();
+        trackEvent('Publication Link', 'click', linkType + ': ' + linkText);
+      });
+    });
+  }
+  
+  // Track video hover interactions (for publication previews)
+  function trackVideoInteractions() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video, index) => {
+      const parentRow = video.closest('tr');
+      if (parentRow) {
+        const paperTitle = parentRow.querySelector('papertitle');
+        const title = paperTitle ? paperTitle.textContent.trim().substring(0, 50) : 'Video ' + index;
+        
+        parentRow.addEventListener('mouseenter', function() {
+          trackEvent('Video', 'hover', title);
+        });
+      }
+      
+      // Track video play events for videos with controls
+      if (video.hasAttribute('controls')) {
+        video.addEventListener('play', function() {
+          trackEvent('Video', 'play', 'Video ' + index);
+        });
+        video.addEventListener('pause', function() {
+          trackEvent('Video', 'pause', 'Video ' + index);
+        });
+        video.addEventListener('ended', function() {
+          trackEvent('Video', 'complete', 'Video ' + index);
+        });
+      }
+    });
+  }
+  
+  // Track section views (when sections come into viewport)
+  function trackSectionViews() {
+    const sections = document.querySelectorAll('heading');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionName = entry.target.textContent.trim();
+          trackEvent('Section', 'view', sectionName);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+  
+  // Initialize all tracking when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTracking);
+  } else {
+    initTracking();
+  }
+  
+  function initTracking() {
+    trackNavigationLinks();
+    trackExternalLinks();
+    trackDownloads();
+    trackScrollDepth();
+    trackTimeOnPage();
+    trackPublications();
+    trackVideoInteractions();
+    trackSectionViews();
+  }
+})();
+</script>
 </body>
 
 </html>
