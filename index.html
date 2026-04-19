@@ -48,7 +48,7 @@
 
               </p>
               <p style="text-align:center">
-                <a href="mailto:patyin@cs.washington.edu">Email</a> &nbsp|&nbsp
+                <a id="email-link" href="#">Email</a> &nbsp|&nbsp
                 <a href="data/Patrick_Yin_Resume.pdf">CV</a> &nbsp|&nbsp
                 <a href="https://scholar.google.com/citations?hl=en&user=AMVmM84AAAAJ">Scholar</a> &nbsp|&nbsp
                 <a href="https://twitter.com/patrickhyin">Twitter</a> &nbsp|&nbsp
@@ -524,8 +524,7 @@
       'https://twitter.com/patrickhyin': 'Twitter',
       'https://github.com/patrickhaoy/': 'Github',
       'data/Patrick_Yin_Failure_Resume.pdf': 'CV of Failures',
-      'https://www.linkedin.com/in/patrickhaoy/': 'LinkedIn',
-      'mailto:patyin@cs.washington.edu': 'Email'
+      'https://www.linkedin.com/in/patrickhaoy/': 'LinkedIn'
     };
     
     Object.keys(navLinks).forEach(href => {
@@ -702,7 +701,24 @@
     initTracking();
   }
   
+  function setupEmailLink() {
+    const el = document.getElementById('email-link');
+    if (!el) return;
+    const user = ['pat', 'yin'].join('');
+    const domain = ['cs', 'washington', 'edu'].join(' . ');
+    const revealed = user + ' \u0040 ' + domain;
+    const label = 'Email';
+    let shown = false;
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      shown = !shown;
+      el.textContent = shown ? revealed : label;
+      if (shown) trackEvent('Navigation', 'click', 'Email');
+    });
+  }
+
   function initTracking() {
+    setupEmailLink();
     trackNavigationLinks();
     trackExternalLinks();
     trackDownloads();
