@@ -32,17 +32,15 @@
                 <name>Patrick Yin</name>
               </p>
               <p>
-                I am a PhD student at the University of Washington advised by Professor 
+                What's up! I am a research intern at <a href="https://www.nvidia.com/en-us/">NVIDIA</a> and a PhD student at <a href="https://www.washington.edu/">UW</a>, advised by 
                 <a href="https://homes.cs.washington.edu/~abhgupta/">Abhishek Gupta</a>. 
-                My research is graciously supported by the <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>.
-                I'm work on embodied AI, with a focus on unlocking superhuman dexterity and robustness in robotics via large-scale RL. 
               </p>
               <p>
-                I am currently a part-time student researcher at <a href="https://www.microsoft.com/en-us/research/collaboration/embodied-ai/">Microsoft Research</a>. 
-                Previously, I did my undergrad at UC Berkeley where I worked with 
-                Professors <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
-                and <a href="https://kuanfang.github.io/ ">Kuan Fang</a> in the
-                <a href="https://bair.berkeley.edu/">Berkeley Artificial Intelligence Research (BAIR)</a> Lab.
+                My research is graciously supported by the <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>.
+                Previously, I was a research intern at <a href="https://www.microsoft.com/en-us/research/collaboration/embodied-ai/">Microsoft Research</a>.
+                Before that, I did my undergrad at <a href="https://eecs.berkeley.edu/cs/">UC Berkeley</a> where I researched at 
+                <a href="https://bair.berkeley.edu/">BAIR</a> with <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a> and
+                <a href="https://kuanfang.github.io/ ">Kuan Fang</a>.
               </p>
               <p>
 
@@ -77,13 +75,15 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
         <td style="padding:20px;width:100%;vertical-align:middle">
-          <heading>Publications</heading>
+          <heading>Selected Publications</heading>
+          <br>
+          <span style="font-size:13px;color:#888">* indicates equal contribution</span>
         </td>
       </tr>
     </tbody></table>
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    <tr onmouseout="omnireset_stop()" onmouseover="omnireset_start()" bgcolor="#ffffd0">
+    <tr onmouseout="omnireset_stop()" onmouseover="omnireset_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one">
           <img src='images/omnireset.png' width="160" style="position: absolute; top: 50%; transform: translateY(-50%);">
@@ -120,7 +120,6 @@
         <a href="https://www.linkedin.com/in/galen-mullins-b077a66a/">Galen Mullins</a>, 
         <a href="https://www.microsoft.com/en-us/research/people/akolobov/">Andrey Kolobov</a>, 
         <a href="https://abhishekunique.github.io/">Abhishek Gupta</a>
-        (* indicates equal contribution)
         <br>
         <em>ICLR 2026</em>  
         <br>
@@ -128,7 +127,7 @@
   /
         <a href="https://arxiv.org/abs/2603.15789">arXiv</a>
         <p></p>
-        <p>We leverage large-scale RL and diverse resets to solve dexterous, contact-rich manipulation tasks with no reward engineering or demos. We distill to RGB and show zero-shot sim2real transfer.</p>
+        <p>Diverse resets and large-scale RL for sim2real dexerity</p>
       </td>
     </tr>
 
@@ -164,7 +163,6 @@
         <a href="https://www.chinganc.com/">Ching-An Cheng</a>, 
         <a href="https://www.microsoft.com/en-us/research/people/akolobov/">Andrey Kolobov</a>, 
         <a href="https://abhishekunique.github.io/">Abhishek Gupta</a>
-        (* indicates equal contribution)
         <br>
         <em>ICLR 2025</em>  
         <br>
@@ -172,7 +170,63 @@
   /
         <a href="https://arxiv.org/abs/2502.02705">arXiv</a>
         <p></p>
-        <p>We propose Simulation-Guided Fine-Tuning (SGFT) - a simple, general sim2real framework which extracts structured exploration priors from simulation to accelerate real world RL.</p>
+        <p>Sim2real value function transfer for real world RL</p>
+      </td>
+    </tr>
+
+        </tbody></table>
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:20px;width:100%;vertical-align:middle">
+          <heading>Other Publications</heading>
+        </td>
+      </tr>
+    </tbody></table>
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+    <tr onmouseout="simdist_stop()" onmouseover="simdist_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <img src='images/simdist.png' width="160" style="position: absolute; top: 50%; transform: translateY(-50%);">
+          <div class="two" id='simdist_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/simdist.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+        </div>
+        <script type="text/javascript">
+          function simdist_start() {
+            document.getElementById('simdist_image').style.opacity = "1";
+          }
+
+          function simdist_stop() {
+            document.getElementById('simdist_image').style.opacity = "0";
+          }
+          simdist_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://sim-dist.github.io/">
+          <papertitle>Simulation Distillation: Pretraining World Models in Simulation for Rapid Real-World Adaptation</papertitle>
+        </a>
+        <br>
+        <a href="https://jake-levy.github.io/">Jacob Levy</a>*,
+        <a href="https://tyler-westenbroek.github.io/">Tyler Westenbroek</a>*,
+        <a href="https://kevinhuang8.github.io/">Kevin Huang</a>,
+        <a href="https://palafox.info/">Fernando Palafox</a>,
+        <strong>Patrick Yin</strong>,
+        <a href="https://www.linkedin.com/in/shayegan/">Shayegan Omidshafiei</a>,
+        <a href="https://dkkim93.github.io/">Dong-Ki Kim</a>,
+        <a href="https://abhishekunique.github.io/">Abhishek Gupta</a>,
+        <a href="https://dfridovi.github.io/">David Fridovich-Keil</a>
+        <br>
+        <em>RSS 2026</em>
+        <br>
+        <a href="https://sim-dist.github.io/">project page</a>
+  /
+        <a href="https://arxiv.org/abs/2603.15759">arXiv</a>
+        <p></p>
+        <p>Sim2real world model transfer for real world RL</p>
       </td>
     </tr>
 
@@ -213,7 +267,7 @@
   /
         <a href="https://arxiv.org/abs/2403.12945">arXiv</a>
         <p></p>
-        <p>A large, diverse robot manipulation dataset with 76k demonstration trajectories.</p>
+        <p>Community driven teleop dataset</p>
       </td>
     </tr>
 
@@ -255,7 +309,7 @@
   /
         <a href="https://arxiv.org/abs/2404.12308">arXiv</a>
         <p></p>
-        <p>We propose a learning system that can leverage a small amount of real-world data to autonomously refine a simulation model, enabling sim-to-real transfer for real-world robotic manipulation tasks.</p>
+        <p>Active sysid for sim2real</p>
       </td>
     </tr>
 
@@ -298,8 +352,7 @@
   /
         <a href="https://arxiv.org/abs/2306.03346">arXiv</a>
         <p></p>
-        <p>We discover that a shallow and wide architecture can boost the performance of contrastive RL approaches on simulated benchmarks. 
-          Additionally, we demonstrate that contrastive approaches can solve real-world robotic manipulation tasks.</p>
+        <p>Contrastive offline RL</p>
       </td>
     </tr>
 
@@ -337,8 +390,7 @@
   /
         <a href="https://arxiv.org/abs/2310.08864">arXiv</a>
         <p></p>
-        <p>A large, open-source real robot dataset with 1M+ real robot trajectories spanning 22 robot embodiments, 
-          from single robot arms to bi-manual robots and quadrupeds.</p>
+        <p>Large community driven teleop dataset</p>
       </td>
     </tr>
 
@@ -380,9 +432,7 @@
   /
         <a href="https://arxiv.org/abs/2210.06601">arXiv</a>
         <p></p>
-        <p>We propose Fine-Tuning with Lossy Affordance Planner (FLAP), a framework that
-          leverages diverse offline data for learning representations, goal-conditioned policies, and affordance
-          models that enable rapid fine-tuning to new tasks in target scenes.</p>
+        <p>Latent space planning for goal-conditioned real-world RL</p>
       </td>
     </tr>
 
@@ -415,7 +465,6 @@
         <strong>Patrick Yin</strong>*,
         <a href="https://ashvin.me/">Ashvin Nair</a>, 
         <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
-        (* indicates equal contribution)
         <br>
         <em>IROS 2022</em>  
         <br>
@@ -423,7 +472,7 @@
   /
         <a href="https://arxiv.org/abs/2205.08129">arXiv</a>
         <p></p>
-        <p>We propose Planning to Practice (PTP), a method which makes it practical to train goal-conditioned policies for long-horizon tasks.</p>
+        <p>Planning for goal-conditioned real-world RL</p>
       </td>
     </tr>
 
@@ -464,7 +513,7 @@
     /
           <a href="https://arxiv.org/abs/2204.13060">arXiv</a>
           <p></p>
-          <p>We propose a new form of state abstraction called goal-conditioned bisimulation that captures functional equivariance, allowing for the reuse of skills to achieve new goals in goal-conditioned reinforcement learning.</p>
+          <p>Bisimulation-based offline RL</p>
         </td>
       </tr>
 
@@ -473,20 +522,20 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tr>
             <td>
-              <heading>Miscellaneous from Undergrad</heading>
+              <heading>Misc</heading>
             </td>
           </tr>
         </tbody></table>
         <table width="100%" align="center" border="0" cellpadding="20"><tbody>
           <tr>
             <td width="75%" valign="center">
-              <a href="undergrad_notes/index.html">Notes</a> that I took on machine learning, math, and books during undergrad
+              <a href="undergrad_notes/index.html">Notes</a> from undergrad on ML, math, etc. 
               <br>
               <br>
-              <a href="coursework/index.html">Coursework</a> that I took as an undergrad
+              <a href="coursework/index.html">Coursework</a> from undergrad
               <br>
               <br>
-              <a href="projects/index.html">Coding projects</a> from when I was first learning to code :)
+              <a href="projects/index.html">Coding projects</a> from when I was first learning to code
             </td>
           </tr>
 					
