@@ -186,6 +186,50 @@
     </tbody></table>
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    <tr onmouseout="rebarsim_stop()" onmouseover="rebarsim_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <img src='images/rebarsim.png' width="160" style="position: absolute; top: 50%; transform: translateY(-50%);">
+          <div class="two" id='rebarsim_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/rebarsim.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+        </div>
+        <script type="text/javascript">
+          function rebarsim_start() {
+            document.getElementById('rebarsim_image').style.opacity = "1";
+          }
+
+          function rebarsim_stop() {
+            document.getElementById('rebarsim_image').style.opacity = "0";
+          }
+          rebarsim_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://rebarsim.github.io/">
+          <papertitle>Visual Sim-to-Real Learning for Robotic Insertion under Geometric Variations: Application to Rebar Installation</papertitle>
+        </a>
+        <br>
+        <a href="https://taosun99.github.io/">Tao Sun</a>,
+        <a href="https://beininghan.github.io/">Beining Han</a>,
+        <strong>Patrick Yin</strong>,
+        <a href="https://scholar.google.com/citations?user=tn6DJrwAAAAJ&hl=en">Rui Xu</a>,
+        <a href="https://www.linkedin.com/in/h-harry/">Harry He</a>,
+        <a href="https://abhishekunique.github.io/">Abhishek Gupta</a>,
+        <a href="https://www.cs.princeton.edu/~smr/">Szymon Rusinkiewicz</a>,
+        <a href="https://www.shao-lab.com/Learn-more-4469738c5183485884effe68c04e692d/">Yi Shao</a>
+        <br>
+        <em>Under review, 2026</em>
+        <br>
+        <a href="https://rebarsim.github.io/">project page</a>
+  /
+        <a href="https://arxiv.org/abs/2609.20477">arXiv</a>
+        <p></p>
+        <p>Sim2real RL for construction rebar insertion</p>
+      </td>
+    </tr>
+
     <tr onmouseout="simdist_stop()" onmouseover="simdist_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one">
