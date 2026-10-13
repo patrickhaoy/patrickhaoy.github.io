@@ -84,6 +84,56 @@
     </tbody></table>
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    <tr onmouseout="alphanist_stop()" onmouseover="alphanist_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <img src='images/alphanist.png' width="160" style="position: absolute; top: 50%; transform: translateY(-50%);">
+          <div class="two" id='alphanist_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/alphanist.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+        </div>
+        <script type="text/javascript">
+          function alphanist_start() {
+            document.getElementById('alphanist_image').style.opacity = "1";
+          }
+
+          function alphanist_stop() {
+            document.getElementById('alphanist_image').style.opacity = "0";
+          }
+          alphanist_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://alpha-nist.github.io/">
+          <papertitle>AlphaNIST: Emergent Assembly Skills from Binary Task Rewards</papertitle>
+        </a>
+        <br>
+        <a href="https://zoctipus.github.io/">Octi Zhang</a>,
+        <a href="https://research.nvidia.com/person/iretiayo-akinola">Iretiayo Akinola</a>,
+        <a href="https://rosarioscalise.com/">Rosario Scalise</a>,
+        <a href="https://www.mateoguaman.com/">Mateo Guaman Castro</a>,
+        <strong>Patrick Yin</strong>,
+        <a href="https://openreview.net/profile?id=~Tobias_Widmer1">Tobias Widmer</a>,
+        <a href="https://mmacklin.com/">Miles Macklin</a>,
+        <a href="https://arxiv.org/search/cs?searchtype=author&query=Amevor,+C">Chris Amevor</a>,
+        <a href="https://www.cs.toronto.edu/~dylanturpin/">Dylan Turpin</a>,
+        <a href="https://www.linkedin.com/in/dirkvangelder">Dirk Van Gelder</a>,
+        <a href="https://jan.carius.io/about/">Jan Carius</a>,
+        <a href="https://scholar.google.com/citations?user=sCTJI-0AAAAJ">Ankur Handa</a>,
+        <a href="https://www.linkedin.com/in/gavstate/">Gavriel State</a>,
+        <a href="https://www.linkedin.com/in/kelly-guo-18316982/">Yunrong Guo</a>,
+        <a href="https://research.nvidia.com/person/yashraj-narang">Yashraj Narang</a>
+        <br>
+        <em>Under review, 2026</em>
+        <br>
+        <a href="https://alpha-nist.github.io/">project page</a>
+  /
+        <a href="https://arxiv.org/abs/2610.13354">arXiv</a>
+        <p></p>
+        <p>Emergent dexterity from multi-task large-scale RL</p>
+      </td>
+    </tr>
 
     <tr onmouseout="sgs_stop()" onmouseover="sgs_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
